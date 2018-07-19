@@ -1,10 +1,12 @@
+import WebChat from '@/components/WebChat'
+
 export default {
   name: 'page-home',
-  components: {},
+  components: { WebChat },
   props: [],
   data () {
     return {
-
+      directLineSecret: 'YOUR_DIRECTLINE_SECRET'
     }
   },
   computed: {
