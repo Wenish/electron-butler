@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/Wenish/electron-butler.svg?branch=master)](https://travis-ci.org/Wenish/electron-butler)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/kkj9dhixpkv71da4?svg=true)](https://ci.appveyor.com/project/Wenish/electron-butler)
+
 # electron-butler
 
 > An electron-vue project
