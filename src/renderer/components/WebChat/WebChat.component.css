@@ -3,3 +3,11 @@
   width: 100%;
   height: 100%;
 }
+
+.wc-header {
+    display: none;
+}
+
+.wc-message-groups{
+    top: 0;
+}
