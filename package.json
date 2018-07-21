@@ -1,6 +1,6 @@
 {
   "name": "electron-butler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Wenish <Wenish@users.noreply.github.com>",
   "description": "An electron-vue project",
   "license": null,
@@ -53,6 +53,8 @@
   "dependencies": {
     "axios": "^0.16.1",
     "botframework-webchat": "^0.14.0",
+    "material-design-icons": "^3.0.1",
+    "typeface-roboto": "0.0.54",
     "vue": "^2.3.3",
     "vue-electron": "^1.0.6",
     "vue-material": "^1.0.0-beta-10.2",
