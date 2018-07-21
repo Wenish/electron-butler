@@ -62,6 +62,7 @@
 <style>
     :root {
         --md-theme-default-background: linear-gradient(135deg, #cfe4f7 0%,#e5f0f9 100%);
+        --md-theme-default-icon-on-background: #1781e3;
     }
     html, body, #app, .md-app {
         min-height: 100%;
