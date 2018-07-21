@@ -1,0 +1,26 @@
+.web-chat{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.wc-header {
+    display: none;
+}
+
+.wc-message-groups{
+    top: 0;
+}
+
+.wc-console {
+    border-color: #fff;
+    background: #eef3f6;
+}
+
+.wc-console svg {
+    fill: #1781e3;
+}
+
+.wc-console input[type=text], .wc-console textarea {
+  caret-color: #1781e3;
+}

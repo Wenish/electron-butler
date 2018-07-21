@@ -17,7 +17,7 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "electron-butler",
+    "productName": "Butler",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
@@ -51,11 +51,14 @@
     }
   },
   "dependencies": {
-    "vue": "^2.3.3",
     "axios": "^0.16.1",
+    "botframework-webchat": "^0.14.0",
+    "vue": "^2.3.3",
     "vue-electron": "^1.0.6",
+    "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^2.5.3",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
