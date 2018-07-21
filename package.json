@@ -17,7 +17,7 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "electron-butler",
+    "productName": "Butler",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
