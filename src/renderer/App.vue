@@ -2,7 +2,10 @@
     <div id="app">
       <md-app>
 
-        <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini" md-permanent="full">
+        <md-app-drawer
+            :md-active.sync="menuVisible"
+            md-persistent="mini"
+            md-permanent="full">
           <md-list>
             <md-list-item @click="toggleMenu">
               <md-icon>menu</md-icon>
@@ -14,7 +17,7 @@
               <span class="md-list-item-text">Home</span>
             </md-list-item>
 
-            <md-list-item href="https://google.com" target="_blank">
+            <md-list-item @click="openCompanyPortal" v-if="platform == 'win32'">
               <md-icon>domain</md-icon>
               <span class="md-list-item-text">Company Portal</span>
             </md-list-item>
@@ -39,12 +42,16 @@
   export default {
     name: 'electron-butler',
     data: () => ({
-      menuVisible: false
+      menuVisible: false,
+      platform: require('os').platform()
     }),
     methods: {
-      toggleMenu () {
-        this.menuVisible = !this.menuVisible
-      }
+        toggleMenu () {
+            this.menuVisible = !this.menuVisible
+        },
+        openCompanyPortal () {
+            require("electron").shell.openExternal('companyportal://');
+        }
     }
   }
 </script>
