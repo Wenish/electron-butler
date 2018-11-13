@@ -9,7 +9,7 @@
 }
 
 .wc-message-groups{
-    top: 0;
+    top: 0 !important;
 }
 
 .wc-console {
@@ -18,7 +18,7 @@
 }
 
 .wc-console svg {
-    fill: #1781e3;
+    fill: #1781e3 !important;
 }
 
 .wc-console input[type=text], .wc-console textarea {

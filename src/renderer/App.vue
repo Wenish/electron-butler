@@ -2,36 +2,29 @@
     <div id="app">
       <md-app>
 
-        <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini" md-permanent="full">
-          <md-toolbar class="md-transparent" md-elevation="0">
-            <span>Navigation</span>
-
-            <div class="md-toolbar-section-end">
-              <md-button class="md-icon-button md-dense" @click="toggleMenu">
-                <md-icon>keyboard_arrow_left</md-icon>
-              </md-button>
-            </div>
-          </md-toolbar>
-
+        <md-app-drawer
+            :md-active.sync="menuVisible"
+            md-persistent="mini"
+            md-permanent="full">
           <md-list>
-            <md-list-item>
-              <md-icon>move_to_inbox</md-icon>
-              <span class="md-list-item-text">Inbox</span>
+            <md-list-item @click="toggleMenu">
+              <md-icon>menu</md-icon>
+              <span class="md-list-item-text"></span>
             </md-list-item>
 
-            <md-list-item>
-              <md-icon>send</md-icon>
-              <span class="md-list-item-text">Sent Mail</span>
+            <md-list-item to="/">
+              <md-icon>home</md-icon>
+              <span class="md-list-item-text">Home</span>
             </md-list-item>
 
-            <md-list-item>
-              <md-icon>delete</md-icon>
-              <span class="md-list-item-text">Trash</span>
+            <md-list-item @click="openCompanyPortal" v-if="platform == 'win32'">
+              <md-icon>domain</md-icon>
+              <span class="md-list-item-text">Company Portal</span>
             </md-list-item>
 
-            <md-list-item>
-              <md-icon>error</md-icon>
-              <span class="md-list-item-text">Spam</span>
+            <md-list-item to="/settings">
+              <md-icon>settings</md-icon>
+              <span class="md-list-item-text">Settings</span>
             </md-list-item>
           </md-list>
         </md-app-drawer>
@@ -49,19 +42,23 @@
   export default {
     name: 'electron-butler',
     data: () => ({
-      menuVisible: false
+      menuVisible: false,
+      platform: require('os').platform()
     }),
     methods: {
-      toggleMenu () {
-        this.menuVisible = !this.menuVisible
-      }
+        toggleMenu () {
+            this.menuVisible = !this.menuVisible
+        },
+        openCompanyPortal () {
+            require("electron").shell.openExternal('companyportal://');
+        }
     }
   }
 </script>
 
 <style>
     :root {
-        --md-theme-default-background: linear-gradient(135deg, #cfe4f7 0%,#e5f0f9 100%);
+        --md-theme-default-icon-on-background: #1781e3;
     }
     html, body, #app, .md-app {
         min-height: 100%;
@@ -93,6 +90,9 @@
 
     .md-drawer.md-permanent-full .md-list {
         padding-top: 8px;
+    }
+    .md-drawer.md-persistent-mini.md-active {
+        width: 200px;
     }
 
     body{
